@@ -1,0 +1,163 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+  color: #FEFEFE;
+  text-align: center;
+}
+
+.bg-image{
+  background-image: url(/images/forestbg.jpg);
+  width: 100%;
+  height: 700px;
+  background-size: cover ;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.container{
+  position: relative;
+  width: 320px;
+  height: 100px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
+}
+.carousel{
+  position: fixed;
+  width: 300px;
+  margin-top: 100px;
+  margin-left: 40%;
+  margin-right: 60%;
+  transform-style: preserve-3d;
+  animation: rotate360 20s infinite forwards linear ;
+  display: block;
+}
+.image{
+  object-position: center;
+  position: absolute;
+  width: 300px;
+  height: 187px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgb(0, 0, 0, 0.5);
+  display: flex;
+}
+span{
+  margin: auto;
+  font-size: 2rem;
+}
+@keyframes rotate360{
+  from{
+    transform: rotateY(0deg);
+  }
+  to{
+    transform: rotateY(-360deg);
+  }
+}
+.image:nth-child(1){
+  background-image: url(./images/forest10.jpg);
+  transform: rotateY(0deg) translateZ(430px);
+}
+.image:nth-child(2){
+  background-image: url(./images/forest12.jpg);
+  transform: rotateY(40deg) translateZ(430px);
+}
+.image:nth-child(3){
+  background-image: url(./images/forest13.jpg);
+  transform: rotateY(80deg) translateZ(430px);
+}
+.image:nth-child(4){
+  background-image: url(./images/forest14.jpg);
+  transform: rotateY(120deg) translateZ(430px);
+}
+.image:nth-child(5){
+  background-image: url(./images/forest15.jpg);
+  transform: rotateY(160deg) translateZ(430px);
+}
+.image:nth-child(6){
+  background-image: url(./images/forest16.jpg);
+  transform: rotateY(200deg) translateZ(430px);
+}
+.image:nth-child(7){
+  background-image: url(./images/forest17.jpg);
+  transform: rotateY(240deg) translateZ(430px);
+}
+.image:nth-child(8){
+  background-image: url(./images/forest18.jpg);
+  transform: rotateY(280deg) translateZ(430px);
+}
+.image:nth-child(9){
+  background-image: url(./images/forest19.jpg);
+  transform: rotateY(320deg) translateZ(430px);
+}
+.loader{
+  margin-top: 10px;
+  width: 6em;
+  height: 6em;
+  font-size: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+.loader .face{
+  position: absolute;
+  border-radius: 50%;
+  border-style: solid;
+  animation: animate023845 3s linear infinite;
+
+}
+.loader .face:nth-child(1){
+  width: 100%;
+  height: 100%;
+  color: gold;
+  border-color: currentColor transparent transparent currentColor;
+  border-width: 0.2em 0.2em 0em 0em;
+  --deg: -45deg;
+  animation-direction: normal;
+}
+.loader .face:nth-child(2){
+  width: 70%;
+  height: 70%;
+  color: lime;
+  border-color: currentColor currentColor transparent transparent;
+  border-width:  0.2em 0em 0em 0.2em;
+  --deg:-135deg;
+  animation-direction: reverse;
+}
+.loader .face .circle{
+  position: absolute;
+  width: 50%;
+  height: 0.1em;
+  top: 50%;
+  left: 50%;
+  background-color: transparent;
+  transform: rotate(var(--deg));
+  transform-origin: left;
+}
+.loader .face .circle::before{
+  position: absolute;
+  top: -0.5em;
+  right: -0.5em;
+  content: '';
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  border-radius: 50%;
+  box-shadow:  0 0 2em,
+      0 0 4em,
+      0 0 6em,
+      0 0 8em,
+      0 0 10em,
+      0 0 0 0.5em
+      rgba(255, 255, 0, 0.1);
+}
+@keyframes animate023845{
+  to{
+    transform: rotate(1turn);
+  }
+}
